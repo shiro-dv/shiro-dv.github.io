@@ -16,15 +16,23 @@
 
 (function heroParallax(){
   const bg = document.getElementById('heroBg');
-  if (!bg) return;
+  const stars = document.getElementById('stars');
+  if (!bg && !stars) return;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
 
   let ticking = false;
   function update(){
     const y = window.scrollY;
-    const shift = Math.min(y * 0.18, 140);
-    bg.style.transform = `translateY(${shift}px) scale(1.04)`;
+    if (bg){
+      const shift = Math.min(y * 0.18, 140);
+      bg.style.transform = `translateY(${shift}px) scale(1.04)`;
+    }
+    if (stars){
+      // Moves slower than the nebula bg so the star field reads as further away.
+      const shift = Math.min(y * 0.08, 70);
+      stars.style.transform = `translateY(${shift}px)`;
+    }
     ticking = false;
   }
   window.addEventListener('scroll', () => {
