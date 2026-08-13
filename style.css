@@ -654,3 +654,24 @@ section{
   section{ padding:80px 0; }
   .contact-links a{ width:100%; }
 }
+
+@media (max-width:600px){
+  /* Stack the hero CTAs full-width instead of side-by-side — on narrow
+     screens the two buttons no longer leave enough room for the
+     absolutely-positioned "Scroll" cue to sit between/below them
+     without overlapping, so it gets hidden below instead. */
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+  }
+  .hero-actions .btn{
+    justify-content:center;
+  }
+  .hero-content{
+    padding-bottom:6vh;
+  }
+  .scroll-cue{
+    display:none;
+  }
+}
