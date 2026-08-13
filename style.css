@@ -335,24 +335,30 @@ section{
 .terminal-bar{
   display:flex;
   align-items:center;
-  gap:8px;
   padding:11px 16px;
   border-bottom:1px solid var(--line);
   background:var(--surface-2);
 }
 .terminal-bar span{
+  flex:0 0 8px;
   width:8px; height:8px;
   border-radius:50%;
   background:var(--text-dim);
   opacity:.5;
+  margin-right:8px;
 }
 .terminal-bar .label{
+  width:auto;
+  height:auto;
+  border-radius:0;
+  background:none;
+  opacity:1;
+  margin-right:0;
   margin-left:8px;
   font-family:var(--font-mono);
   font-size:11px;
   color:var(--text-dim);
   letter-spacing:0.06em;
-  opacity:1;
 }
 .terminal-body{
   padding:20px 22px 24px;
