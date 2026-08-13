@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julian Cabezas — Cybersecurity</title>
+<meta name="description" content="Portfolio of Julian Cabezas, cybersecurity major and aspiring security engineer.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="#" class="brand">J. CABEZAS <span>// SEC</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header class="hero" id="top">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-veil"></div>
+  <div class="stars" id="stars"></div>
+
+  <div class="hero-content wrap">
+    <p class="eyebrow hero-eyebrow">Signal acquired — Houston, TX</p>
+    <h1 class="hero-title">Watching the<br><em>attack surface</em><br>from below.</h1>
+    <p class="hero-sub">Julian Cabezas — cybersecurity major building defenses for systems most people never look up to notice.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-solid">View Projects</a>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <span class="line"></span>
+  </div>
+</header>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-text">
+      <p class="eyebrow">01 — About</p>
+      <h2 class="section-title" style="margin-bottom:22px;">A cybersecurity major learning to think like the threat.</h2>
+      <p>I'm currently studying <strong>cybersecurity</strong>, focused on the space between offense and defense — how systems fail, and how they're built to fail safely instead. Most of my work lives in labs, CTFs, and personal projects where I can break things on purpose before someone else does it by accident.</p>
+      <p>I'm drawn to the quieter side of security: log analysis, network behavior, and the long trail of evidence most incidents leave behind. My goal is a career on a <strong>blue team</strong>, hardening infrastructure and catching what shouldn't be there.</p>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span></span><span></span><span></span>
+        <span class="label">whoami.sh</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-row"><span>Focus</span><b>Network Security</b></div>
+        <div class="terminal-row"><span>Status</span><b>Cybersecurity Major</b></div>
+        <div class="terminal-row"><span>Tools</span><b>Wireshark, Nmap, Splunk</b></div>
+        <div class="terminal-row"><span>Languages</span><b>Python, Bash, C</b></div>
+        <div class="terminal-row"><span>Interests</span><b>Blue Team, CTF, IR</b></div>
+        <div class="terminal-prompt">open_to_opportunities <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+     ============================================================ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">02 — Projects</p>
+        <h2 class="section-title">Selected repositories</h2>
+      </div>
+      <p class="section-note">A few things I've built while learning how systems break — and how to stop it.</p>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding:0;">
+    <div class="projects-grid">
+
+      <a class="card" href="#" target="_blank" rel="noopener">
+        <div class="card-ripples"><span></span><span></span><span></span></div>
+        <div class="card-top">
+          <span>REPO / 01</span>
+          <span class="card-status"><i></i>ACTIVE</span>
+        </div>
+        <h3 class="card-name"><span class="slash">/</span>packet-sentinel</h3>
+        <p class="card-desc">A lightweight network intrusion detector that flags anomalous traffic patterns in real time using custom Python signatures.</p>
+        <div class="card-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Scapy</span>
+          <span class="tag">Networking</span>
+        </div>
+        <span class="card-link">View repository →</span>
+      </a>
+
+      <a class="card" href="#" target="_blank" rel="noopener">
+        <div class="card-ripples"><span></span><span></span><span></span></div>
+        <div class="card-top">
+          <span>REPO / 02</span>
+          <span class="card-status"><i></i>ACTIVE</span>
+        </div>
+        <h3 class="card-name"><span class="slash">/</span>ctf-writeups</h3>
+        <p class="card-desc">Documented solutions and methodology from CTF competitions — reconnaissance, exploitation, and post-mortem notes.</p>
+        <div class="card-tags">
+          <span class="tag">CTF</span>
+          <span class="tag">Markdown</span>
+          <span class="tag">Exploit Dev</span>
+        </div>
+        <span class="card-link">View repository →</span>
+      </a>
+
+      <a class="card" href="#" target="_blank" rel="noopener">
+        <div class="card-ripples"><span></span><span></span><span></span></div>
+        <div class="card-top">
+          <span>REPO / 03</span>
+          <span class="card-status"><i></i>STABLE</span>
+        </div>
+        <h3 class="card-name"><span class="slash">/</span>log-triage-toolkit</h3>
+        <p class="card-desc">Command-line utilities that parse and correlate system logs to speed up incident response and threat hunting.</p>
+        <div class="card-tags">
+          <span class="tag">Bash</span>
+          <span class="tag">Splunk</span>
+          <span class="tag">SIEM</span>
+        </div>
+        <span class="card-link">View repository →</span>
+      </a>
+
+      <a class="card" href="#" target="_blank" rel="noopener">
+        <div class="card-ripples"><span></span><span></span><span></span></div>
+        <div class="card-top">
+          <span>REPO / 04</span>
+          <span class="card-status"><i></i>ACTIVE</span>
+        </div>
+        <h3 class="card-name"><span class="slash">/</span>vuln-scanner-lite</h3>
+        <p class="card-desc">A minimal, extensible vulnerability scanner for lab environments, built to teach the fundamentals of enumeration.</p>
+        <div class="card-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Nmap</span>
+          <span class="tag">Automation</span>
+        </div>
+        <span class="card-link">View repository →</span>
+      </a>
+
+      <a class="card" href="#" target="_blank" rel="noopener">
+        <div class="card-ripples"><span></span><span></span><span></span></div>
+        <div class="card-top">
+          <span>REPO / 05</span>
+          <span class="card-status"><i></i>ARCHIVED</span>
+        </div>
+        <h3 class="card-name"><span class="slash">/</span>secure-auth-lab</h3>
+        <p class="card-desc">A hands-on lab exploring authentication weaknesses — session handling, token replay, and password hygiene.</p>
+        <div class="card-tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">JWT</span>
+          <span class="tag">AppSec</span>
+        </div>
+        <span class="card-link">View repository →</span>
+      </a>
+
+      <a class="card" href="#" target="_blank" rel="noopener">
+        <div class="card-ripples"><span></span><span></span><span></span></div>
+        <div class="card-top">
+          <span>REPO / 06</span>
+          <span class="card-status"><i></i>ACTIVE</span>
+        </div>
+        <h3 class="card-name"><span class="slash">/</span>home-soc-lab</h3>
+        <p class="card-desc">Infrastructure-as-code for a home security operations lab — segmented network, IDS, and log aggregation.</p>
+        <div class="card-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">Networking</span>
+        </div>
+        <span class="card-link">View repository →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div>
+        <p class="eyebrow">03 — Contact</p>
+        <h2 class="contact-title">Let's get in touch.</h2>
+      </div>
+
+      <div class="contact-links">
+        <a href="mailto:jordan.reyes@example.com"><span>Email</span><span>jordan.reyes@example.com</span></a>
+        <a href="https://github.com/shiro-dv" target="_blank" rel="noopener"><span>GitHub</span><span>@jordanreyes</span></a>
+        <a href="https://www.linkedin.com/in/jgccabezas" target="_blank" rel="noopener"><span>LinkedIn</span><span>in/jordanreyes</span></a>
+        <a href="#top"><span>Back to top</span><span>↑</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-ripple">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50" fill="none" stroke="#c3cdff" stroke-width="1"/>
+      <path d="M0,65 Q150,40 300,65 T600,65 T900,65 T1200,65" fill="none" stroke="#c3cdff" stroke-width="1" opacity="0.6"/>
+      <path d="M0,80 Q150,58 300,80 T600,80 T900,80 T1200,80" fill="none" stroke="#c3cdff" stroke-width="1" opacity="0.35"/>
+    </svg>
+    <div class="footer-meta">
+      <div class="wrap">
+        <span>© 2026 JULIAN CABEZAS</span>
+        <span>BUILT FOR GITHUB PAGES</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
