@@ -91,112 +91,38 @@
         <p class="eyebrow">02 — Projects</p>
         <h2 class="section-title">Selected repositories</h2>
       </div>
-      <p class="section-note">A few things I've built while learning how systems break — and how to stop it.</p>
+      <p class="section-note">Pulled live from GitHub, ranked by stars and recent activity.</p>
     </div>
   </div>
 
-  <div class="wrap" style="padding:0;">
-    <div class="projects-grid">
+  <div class="wrap projects-wrap">
+    <button class="rail-arrow rail-arrow-prev" id="railPrev" aria-label="Scroll repositories left" disabled>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="rail-arrow rail-arrow-next" id="railNext" aria-label="Scroll repositories right">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
 
-      <a class="card" href="#" target="_blank" rel="noopener">
-        <div class="card-ripples"><span></span><span></span><span></span></div>
-        <div class="card-top">
-          <span>REPO / 01</span>
-          <span class="card-status"><i></i>ACTIVE</span>
-        </div>
-        <h3 class="card-name"><span class="slash">/</span>packet-sentinel</h3>
-        <p class="card-desc">A lightweight network intrusion detector that flags anomalous traffic patterns in real time using custom Python signatures.</p>
-        <div class="card-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Scapy</span>
-          <span class="tag">Networking</span>
-        </div>
-        <span class="card-link">View repository →</span>
-      </a>
-
-      <a class="card" href="#" target="_blank" rel="noopener">
-        <div class="card-ripples"><span></span><span></span><span></span></div>
-        <div class="card-top">
-          <span>REPO / 02</span>
-          <span class="card-status"><i></i>ACTIVE</span>
-        </div>
-        <h3 class="card-name"><span class="slash">/</span>ctf-writeups</h3>
-        <p class="card-desc">Documented solutions and methodology from CTF competitions — reconnaissance, exploitation, and post-mortem notes.</p>
-        <div class="card-tags">
-          <span class="tag">CTF</span>
-          <span class="tag">Markdown</span>
-          <span class="tag">Exploit Dev</span>
-        </div>
-        <span class="card-link">View repository →</span>
-      </a>
-
-      <a class="card" href="#" target="_blank" rel="noopener">
-        <div class="card-ripples"><span></span><span></span><span></span></div>
-        <div class="card-top">
-          <span>REPO / 03</span>
-          <span class="card-status"><i></i>STABLE</span>
-        </div>
-        <h3 class="card-name"><span class="slash">/</span>log-triage-toolkit</h3>
-        <p class="card-desc">Command-line utilities that parse and correlate system logs to speed up incident response and threat hunting.</p>
-        <div class="card-tags">
-          <span class="tag">Bash</span>
-          <span class="tag">Splunk</span>
-          <span class="tag">SIEM</span>
-        </div>
-        <span class="card-link">View repository →</span>
-      </a>
-
-      <a class="card" href="#" target="_blank" rel="noopener">
-        <div class="card-ripples"><span></span><span></span><span></span></div>
-        <div class="card-top">
-          <span>REPO / 04</span>
-          <span class="card-status"><i></i>ACTIVE</span>
-        </div>
-        <h3 class="card-name"><span class="slash">/</span>vuln-scanner-lite</h3>
-        <p class="card-desc">A minimal, extensible vulnerability scanner for lab environments, built to teach the fundamentals of enumeration.</p>
-        <div class="card-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Nmap</span>
-          <span class="tag">Automation</span>
-        </div>
-        <span class="card-link">View repository →</span>
-      </a>
-
-      <a class="card" href="#" target="_blank" rel="noopener">
-        <div class="card-ripples"><span></span><span></span><span></span></div>
-        <div class="card-top">
-          <span>REPO / 05</span>
-          <span class="card-status"><i></i>ARCHIVED</span>
-        </div>
-        <h3 class="card-name"><span class="slash">/</span>secure-auth-lab</h3>
-        <p class="card-desc">A hands-on lab exploring authentication weaknesses — session handling, token replay, and password hygiene.</p>
-        <div class="card-tags">
-          <span class="tag">Node.js</span>
-          <span class="tag">JWT</span>
-          <span class="tag">AppSec</span>
-        </div>
-        <span class="card-link">View repository →</span>
-      </a>
-
-      <a class="card" href="#" target="_blank" rel="noopener">
-        <div class="card-ripples"><span></span><span></span><span></span></div>
-        <div class="card-top">
-          <span>REPO / 06</span>
-          <span class="card-status"><i></i>ACTIVE</span>
-        </div>
-        <h3 class="card-name"><span class="slash">/</span>home-soc-lab</h3>
-        <p class="card-desc">Infrastructure-as-code for a home security operations lab — segmented network, IDS, and log aggregation.</p>
-        <div class="card-tags">
-          <span class="tag">Docker</span>
-          <span class="tag">Terraform</span>
-          <span class="tag">Networking</span>
-        </div>
-        <span class="card-link">View repository →</span>
-      </a>
-
+    <div class="projects-rail" id="projectsRail">
+      <p class="rail-status" id="railStatus">Fetching repositories<span class="cursor"></span></p>
     </div>
   </div>
 </section>
+
+<!-- Template for a single repo card — cloned and filled in by script.js -->
+<template id="cardTemplate">
+  <a class="card" target="_blank" rel="noopener">
+    <div class="card-ripples"><span></span><span></span><span></span></div>
+    <div class="card-top">
+      <span class="card-index"></span>
+      <span class="card-status"><i></i><span class="card-status-label"></span></span>
+    </div>
+    <h3 class="card-name"><span class="slash">/</span><span class="card-name-text"></span></h3>
+    <p class="card-desc"></p>
+    <div class="card-tags"></div>
+    <span class="card-link">View repository →</span>
+  </a>
+</template>
 
 <!-- ============================================================
      CONTACT
@@ -212,7 +138,7 @@
       <div class="contact-links">
         <a href="mailto:jgccabezas@gmail.com"><span>Email</span><span>jgccabezas@gmail.com</span></a>
         <a href="https://github.com/shiro-dv" target="_blank" rel="noopener"><span>GitHub</span><span>@shiro-dv</span></a>
-        <a href="https://www.linkedin.com/in/jgccabezas" target="_blank" rel="noopener"><span>LinkedIn</span><span>in/jgccabezas</span></a>
+        <a href="https://linkedin.com/in/jgccabezas" target="_blank" rel="noopener"><span>LinkedIn</span><span>in/jgccabezas</span></a>
         <a href="#top"><span>Back to top</span><span>↑</span></a>
       </div>
     </div>
@@ -226,7 +152,7 @@
     </svg>
     <div class="footer-meta">
       <div class="wrap">
-        <span>©2026 JULIAN CABEZAS</span>
+        <span>© 2026 JULIAN CABEZAS</span>
         <span>BUILT FOR GITHUB PAGES</span>
       </div>
     </div>
