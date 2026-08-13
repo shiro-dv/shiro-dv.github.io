@@ -138,7 +138,7 @@ img{ max-width:100%; display:block; }
 .hero-bg{
   position:absolute;
   inset:-6% -4% -6% -4%;
-  background-image:url("assets/hero-bg.png");
+  background-image:url("hero-bg.png");
   background-size:cover;
   background-position:center 38%;
   will-change:transform;
