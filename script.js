@@ -1,6 +1,3 @@
-// ============================================================
-// Starfield — scattered twinkling dots layered over the hero art
-// ============================================================
 (function generateStars(){
   const el = document.getElementById('stars');
   if (!el) return;
@@ -17,10 +14,6 @@
   el.appendChild(frag);
 })();
 
-// ============================================================
-// Hero parallax — the scene drifts slower than the scroll,
-// giving the planets and figure a sense of depth
-// ============================================================
 (function heroParallax(){
   const bg = document.getElementById('heroBg');
   if (!bg) return;
@@ -42,11 +35,6 @@
   }, { passive: true });
 })();
 
-// ============================================================
-// Ripple origin — positions the hover ripple rings on each
-// project card at the cursor's entry point, echoing the
-// water ripples in the hero artwork
-// ============================================================
 function wireCardRipple(card){
   card.addEventListener('pointermove', e => {
     const rect = card.getBoundingClientRect();
@@ -57,10 +45,6 @@ function wireCardRipple(card){
   });
 }
 
-// ============================================================
-// GitHub repositories — fetched live and rendered into the
-// horizontal rail, sorted so the strongest repos lead
-// ============================================================
 const GITHUB_USERNAME = 'shiro-dv';
 const MAX_REPOS = 12;
 
@@ -136,10 +120,6 @@ function formatDate(iso){
   return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 }
 
-// ============================================================
-// Rail arrows — scroll the repo rail left/right by one card's
-// width, disabling arrows at each end
-// ============================================================
 function initRailArrows(){
   const rail = document.getElementById('projectsRail');
   const prev = document.getElementById('railPrev');
